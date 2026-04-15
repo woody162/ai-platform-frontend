@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 
 // 🌟 新增：隨身 AI 助教文字區塊元件
 // 🌟 新增：隨身 AI 助教文字區塊元件 (精準相對定位版)
@@ -59,7 +59,7 @@ export function AiTutorArticle({ children }: { children: React.ReactNode }) {
     
     try {
       // 打向你剛剛啟動的本地端 Python 伺服器
-      const response = await fetch('http://localhost:8000/api/ask-ai', {
+      const response = await fetch('https://ai-platform-backend-fn6g.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
