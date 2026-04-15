@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 1. 設定捲軸整體的寬度與高度 (做得細一點比較有質感) */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* 2. 捲軸的軌道 (設定為透明，才不會破壞毛玻璃背景) */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* 3. 淺色模式下的捲軸拉桿 */
+  ::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; /* Tailwind 的 slate-300 */
+    border-radius: 20px;
+  }
+
+  /* 淺色模式下，滑鼠移過去時稍微變深 */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8; /* Tailwind 的 slate-400 */
+  }
+
+  /* 4. 🌟 深色模式下的捲軸拉桿 (當最外層有 .dark 時觸發) */
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: #334155; /* Tailwind 的 slate-700 */
+  }
+
+  /* 深色模式下，滑鼠移過去時稍微變亮 */
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: #475569; /* Tailwind 的 slate-600 */
+  }
+}
