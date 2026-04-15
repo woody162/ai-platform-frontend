@@ -59,7 +59,7 @@ export function AiTutorArticle({ children }: { children: React.ReactNode }) {
     
     try {
       // 打向你剛剛啟動的本地端 Python 伺服器
-      const response = await fetch('https://ai-platform-backend-fn6g.onrender.com', {
+      const response = await fetch('https://ai-platform-backend-fn6g.onrender.com/api/ask-ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
